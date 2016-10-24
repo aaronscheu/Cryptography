@@ -43,7 +43,6 @@ def encode(msg):
 def decode(msg):
     split_msg = msg.split(' ')
     split_msg = filter(None, split_msg)
-    print split_msg
     decoded_msg = ''
     try:
         for char in split_msg:
