@@ -46,7 +46,7 @@ def decode(msg):
     decoded_msg = ''
     try:
         for char in split_msg:
-            decoded_msg += inverse_code[char.upper()]
+            decoded_msg += inverse_code[char]
         return decoded_msg
     except Exception as e:
         print('Error, unsupported character: {0}'.format(e))
