@@ -19,7 +19,7 @@ code = {'A': '.-',     'B': '-...',   'C': '-.-.',
         'P': '.--.',   'Q': '--.-',   'R': '.-.',
         'S': '...',    'T': '-',      'U': '..-',
         'V': '...-',   'W': '.--',    'X': '-..-',
-        'Y': '-.--',   'Z': '--..',   ' ': '|',
+        'Y': '-.--',   'Z': '--..',   ' ': '',
 
         '0': '-----',  '1': '.----',  '2': '..---',
         '3': '...--',  '4': '....-',  '5': '.....',
@@ -42,7 +42,8 @@ def encode(msg):
 
 def decode(msg):
     split_msg = msg.split(' ')
-    split_msg = filter(None, split_msg)
+    # print split_msg
+    # split_msg = filter(None, split_msg)
     decoded_msg = ''
     try:
         for char in split_msg:
