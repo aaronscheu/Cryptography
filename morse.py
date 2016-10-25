@@ -1,9 +1,8 @@
+# -*- coding: utf-8 -*-
+
 # morse.py
 # python version 2.7.12
 # created at 10.10.2016
-#
-# !/usr/local/bin python
-# -*- coding: utf-8 -*-
 #
 # Morse Code Python Script for encoding or decoding Morse Code
 #
@@ -19,12 +18,19 @@ code = {'A': '.-',     'B': '-...',   'C': '-.-.',
         'P': '.--.',   'Q': '--.-',   'R': '.-.',
         'S': '...',    'T': '-',      'U': '..-',
         'V': '...-',   'W': '.--',    'X': '-..-',
-        'Y': '-.--',   'Z': '--..',   ' ': '',
+        'Y': '-.--',   'Z': '--..',
+
+        'Ä': '.-.-',   'Ö': '---.',   'Ü': '..--',
+        'ß': '...--..',
 
         '0': '-----',  '1': '.----',  '2': '..---',
         '3': '...--',  '4': '....-',  '5': '.....',
         '6': '-....',  '7': '--...',  '8': '---..',
-        '9': '----.'
+        '9': '----.',
+
+        ' ': '',       '.': '.-.-.-', ',': '--..--',
+        ':': '---...', '?': '..--..', '-': '-....-',
+        '@': '.--.-.'
         }
 
 inverse_code = dict((v, k) for (k, v) in code.items())
@@ -57,6 +63,9 @@ def play_sound(msg):
     mixer.init()
     short_sound = mixer.Sound("short.wav")
     long_sound = mixer.Sound("long.wav")
+
+    if msg is None:
+        return
 
     for char in msg:
         if char == '.':
