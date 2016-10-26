@@ -20,8 +20,8 @@ code = {'A': '.-',     'B': '-...',   'C': '-.-.',
         'V': '...-',   'W': '.--',    'X': '-..-',
         'Y': '-.--',   'Z': '--..',
 
-        'Ä': '.-.-',   'Ö': '---.',   'Ü': '..--',
-        'ß': '...--..',
+        u'Ä': '.-.-',   u'Ö': '---.',   u'Ü': '..--',
+        u'ß': '...--..',
 
         '0': '-----',  '1': '.----',  '2': '..---',
         '3': '...--',  '4': '....-',  '5': '.....',
@@ -30,7 +30,7 @@ code = {'A': '.-',     'B': '-...',   'C': '-.-.',
 
         ' ': '',       '.': '.-.-.-', ',': '--..--',
         ':': '---...', '?': '..--..', '-': '-....-',
-        '@': '.--.-.'
+        u'@': '.--.-.'
         }
 
 inverse_code = dict((v, k) for (k, v) in code.items())
@@ -79,7 +79,7 @@ def play_sound(msg):
 
 
 def main():
-    message = raw_input('Type the Message you want to de/encode: ')
+    message = raw_input('Type the Message you want to de/encode: ').decode('utf-8')
 
     if message.startswith('.') or message.startswith('-'):
         print decode(message)
